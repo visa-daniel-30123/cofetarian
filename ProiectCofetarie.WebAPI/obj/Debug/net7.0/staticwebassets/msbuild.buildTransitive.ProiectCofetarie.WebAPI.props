@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ProiectCofetarie.WebAPI.props" />
+</Project>

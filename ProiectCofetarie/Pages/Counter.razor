@@ -1,0 +1,313 @@
+﻿@page "/counter"
+@using ProiectCofetarie.Data
+@using ProiectCofetarie.Library;
+@using ProiectCofetarie.Library.Models;
+@inject AppCofetarie AppCofetarie
+@inject ListaComenzi comanda
+@inject APIService APIService
+<PageTitle>Candy Bar</PageTitle>
+
+<h1>Candy Bar</h1>
+<div class="grid-container">
+    <div class="grid-item"><img src="./blueberryKid.jpeg" @onclick="BlueberryKid" /> </div>
+    <div class="grid-item"><img src="./caramelizedFever.jpeg" @onclick="CaramelizedFever" /></div>
+    <div class="grid-item"><img src="./ecler.jpeg" @onclick="Ecler" /></div>
+    <div class="grid-item"><h3>Blueberry Kid  30ron/300gr</h3></div>
+    <div class="grid-item"><h3> Caramelized Fever 40ron/300gr</h3></div>
+    <div class="grid-item"><h3>Ecler 50lei/300gr</h3></div>
+
+
+    <div class="grid-item"><img src="./forest.jpeg" @onclick="Forest" /></div>
+    <div class="grid-item"><img src="./limeLife.jpeg" @onclick="limeLife" /></div>
+    <div class="grid-item"><img src="./littleDream.jpeg" @onclick="LittleDream" /></div>
+    <div class="grid-item"><h3>Forest 25lei/200gr</h3></div>
+    <div class="grid-item"><h3>Lime Life 50lei/200gr</h3></div>
+    <div class="grid-item"><h3>Little Dream 20lei/200gr</h3></div>
+
+    <div class="grid-item"><img src="./minicarrotcake.jpeg" @onclick="MiniCarrotCake" /></div>
+    <div class="grid-item"><img src="./oceanMarshmallow.jpeg" @onclick="OceanMarshmallow" /></div>
+    <div class="grid-item"><img src="./oreoSmile.jpeg" @onclick="OreoSmile" /></div>
+    <div class="grid-item"><h3>Mini Carrot Cake 40ron/150gr</h3></div>
+    <div class="grid-item"><h3>Ocean Marshmallow 80ron/250gr</h3></div>
+    <div class="grid-item"><h3>Oreo Smile 70ron/400gr</h3></div>
+
+    <div class="grid-item"><img src="./pistachioCupcake.jpeg" @onclick="PistachioCupcake" /></div>
+    <div class="grid-item"><img src="./pistachioVibes.jpeg" @onclick="PistachioVibes" /></div>
+    <div class="grid-item"><img src="./rochen.jpeg" @onclick="Rochen" /></div>
+    <div class="grid-item"><h3>Pistachio Cupcake 90ron/300gr</h3></div>
+    <div class="grid-item"><h3>Pistachio Vibes 95ron/350gr</h3></div>
+    <div class="grid-item"><h3>Rochen 45ron/150gr</h3></div>
+
+    <div class="grid-item"><img src="./royal.jpeg" @onclick="Royal" /></div>
+    <div class="grid-item"><img src="./seasideMarshmallow.jpeg" @onclick="SeasideMarshmallow" /></div>
+    <div class="grid-item"><img src="./sweeteEgg.jpeg" @onclick="SweetEgg" /></div>
+    <div class="grid-item"><h3>Royal 20ron/200gr</h3></div>
+    <div class="grid-item"><h3>Seaside Marshmallow 30ron/200gr</h3></div>
+    <div class="grid-item"><h3>Sweet Egg 50ron/250gr</h3></div>
+
+
+
+</div>
+
+<style>
+    button {
+        margin: 0;
+        position: absolute;
+    }
+
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .grid-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+        .grid-item img {
+            width: 70%;
+            height: 70%;
+            object-fit: cover;
+        }
+
+    .add {
+        width: 100%;
+        font-size: 30px;
+        background-color: rgba(0,0,0,0);
+        color: white;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        opacity: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+</style>
+
+@code {
+
+
+
+    public void BlueberryKid()
+    {
+        var produs = APIService.Get<Produs>("BlueberryKid");
+        if (produs.Cantitate > 0)
+        {
+            String den = "BlueberryKid";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+
+    public void CaramelizedFever()
+    {
+        var produs = APIService.Get<Produs>("CaramelizedFever");
+        if (produs.Cantitate > 0)
+        {
+            String den = "CaramelizedFever";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void Ecler()
+    {
+        var produs = APIService.Get<Produs>("Ecler");
+        if (produs.Cantitate > 0)
+        {
+            String den = "Ecler";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void Forest()
+    {
+        var produs = APIService.Get<Produs>("Forest");
+        if (produs.Cantitate > 0)
+        {
+            String den = "Forest";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+
+    public void limeLife()
+    {
+        var produs = APIService.Get<Produs>("LimeLife");
+        if (produs.Cantitate > 0)
+        {
+            String den = "LimeLife";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void LittleDream()
+    {
+        var produs = APIService.Get<Produs>("LittleFream");
+        if (produs.Cantitate > 0)
+        {
+            String den = "LittleDream";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void MiniCarrotCake()
+    {
+        var produs = APIService.Get<Produs>("MiniCarrotCake");
+        if (produs.Cantitate > 0)
+        {
+            String den = "MiniCarrotCake";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+
+    public void OceanMarshmallow()
+    {
+        var produs = APIService.Get<Produs>("OceanMarshmallow");
+        if (produs.Cantitate > 0)
+        {
+            String den = "OceanMarshmallow";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void OreoSmile()
+    {
+        var produs = APIService.Get<Produs>("OreoSmile");
+        if (produs.Cantitate > 0)
+        {
+            String den = "OreoSmile";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void PistachioCupcake()
+    {
+
+        var produs = APIService.Get<Produs>("PistachioCupcake");
+        if (produs.Cantitate > 0)
+        {
+            String den = "PistachioCupcake";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void PistachioVibes()
+    {
+        var produs = APIService.Get<Produs>("PistachioVibes");
+        if (produs.Cantitate > 0)
+        {
+            String den = "PistachioVibes";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void Rochen()
+    {
+        var produs = APIService.Get<Produs>("Rochen");
+        if (produs.Cantitate > 0)
+        {
+            String den = "Rochen";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+
+    public void Royal()
+    {
+        var produs = APIService.Get<Produs>("Royal");
+        if (produs.Cantitate > 0)
+        {
+            String den = "Royal";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void SeasideMarshmallow()
+    {
+        var produs = APIService.Get<Produs>("SeasideMarshmallow");
+        if (produs.Cantitate > 0)
+        {
+            String den = "SeasideMarshmallow";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void SweetEgg()
+    {
+        var produs = APIService.Get<Produs>("SweetEgg");
+        if (produs.Cantitate > 0)
+        {
+            String den = "SweetEgg";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+}

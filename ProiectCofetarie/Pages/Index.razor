@@ -1,0 +1,116 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slider-container {
+        width: 100%;
+        height: 40vh; /* Adjust the height as needed */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .description-container {
+        background-color: pink;
+        text-align: left;
+        border: 2px solid #ff1493;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .contact-container {
+        background-color: pink;
+        text-align: left;
+        margin-left: 0px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+</style>
+
+@code {
+    private string[] imageUrls = new[]
+    {
+        "./mangopassion.jpg",
+        "./fistique.jpg",
+        "./sauvage.jpg",
+        "./williams.jpg"
+    };
+
+    private string currentImageUrl;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        SetRandomImage();
+        StartImageSlider();
+    }
+
+    private void SetRandomImage()
+    {
+        Random random = new Random();
+        int index = random.Next(0, imageUrls.Length);
+        currentImageUrl = imageUrls[index];
+    }
+
+    private async Task StartImageSlider()
+    {
+        while (true)
+        {
+            await Task.Delay(4000);
+            SetRandomImage();
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+}
+
+<div class="container">
+    <div class="slider-container">
+        <img class="slider" src="@currentImageUrl" alt="Slide">
+    </div>
+
+
+    <div class="contact-container">
+        <h2 class="contact-heading">Detalii de contact</h2>
+        <h4 class="contact-info">
+            Telefon: 0727729151
+        </h4>
+        <h4 class="contact-info">
+            Email: client@sweetlovers.ro
+        </h4>
+    </div>
+
+    <div class="description-container">
+        <div class="description">
+            <p>
+                Sweets Lovers este o aplicatie web dedicata iubitorilor dulcelui rafinat, echilibrat si aromat,
+                de la cele mai gustoase tonuri fructate pana la cele mai adanci arome de ciocolata neagra.
+            </p>
+            <p>
+                Aplicatia pune la dispozitie o varietate de posibile alegeri ce au la baza cele mai neasteptate combinatii de arome.
+                Preparatele sunt realizate numai din ingrediente naturale, atent selecționate pentru a obține idealul gustului bun.
+            </p>
+        </div>
+    </div>
+</div>
+

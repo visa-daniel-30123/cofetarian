@@ -1,0 +1,242 @@
+﻿@page "/fetchdata"
+@using ProiectCofetarie.Data;
+@using ProiectCofetarie.Library;
+@using ProiectCofetarie.Library.Models;
+@inject WeatherForecastService ForecastService
+@inject APIService APIService
+@inject AppCofetarie AppCofetarie
+@inject ListaComenzi comanda
+@inject MainLayout main
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>TORTURI</h1>
+<div class="grid-container">
+    <div class="grid-item"><img src="./aftereight.jpg" @onclick="AfterEight" /> </div>
+    <div class="grid-item"><img src="./carrotcake.jpg" @onclick="CarrotCake" /></div>
+    <div class="grid-item"><img src="./exoticdelight.jpg" @onclick="ExoticLight" /></div>
+
+
+    <div class="grid-item"><h3>AFTER EIGHT  200 ron</h3></div>
+    <div class="grid-item"><h3> CARROT CAKE  150 ron</h3></div>
+    <div class="grid-item"><h3>EXOTIC LIGHT  250 ron</h3></div>
+    <div class="grid-item"><p>mousse de ciocolată belgiană neagră, mousse de ciocolată albă belgiană cu mentă și blat cu ciocolată</p></div>
+    <div class="grid-item"><p>tort cu blat de morcovi și cremă mascarpone</p></div>
+    <div class="grid-item"><p>mousse de ciocolată belgiană cu lapte cu blat de cacao și insert de fructul pasiunii și mango</p></div>
+    <div class="grid-item"><img src="./fistique.jpg" @onclick="Fistique" /></div>
+    <div class="grid-item"><img src="./mangopassion.jpg" @onclick="MangoPassion" /></div>
+    <div class="grid-item"><img src="./nuts.jpg" @onclick="Nuts" /></div>
+    <div class="grid-item"><h3>FISTIQUE  90 ron</h3></div>
+    <div class="grid-item"><h3>MANGO PASSION  170 ron</h3></div>
+    <div class="grid-item"><h3>NUTS  1330 ron</h3></div>
+    <div class="grid-item"><p>pandișpan pufos cu fistic, mousse de ciocolată albă belgiană cu fistic, crocant de fistic pralinat și inserție de căpșune</p></div>
+    <div class="grid-item"><p>mousse de ciocolată albă belgiană și mascarpone, cu blat cu ciocolată și insert de mango</p></div>
+    <div class="grid-item"><p>mousse de caramel cu insert de alune, migdale, nuci și ciocolată belgiană cu blat pufos de migdale și cacao</p></div>
+    <div class="grid-item"><img src="./rawvegan.jpg" @onclick="Rawvegan" /></div>
+    <div class="grid-item"><img src="./sauvage.jpg" @onclick="Sauvage" /></div>
+    <div class="grid-item"><img src="./whitefantasy.jpg" @onclick="WhiteFantasy" /></div>
+    <div class="grid-item"><h3>RAW VEGAN 130 ron</h3></div>
+    <div class="grid-item"><h3>SAUVAGE  105 ron</h3></div>
+    <div class="grid-item"><h3>WHITE FANTASY  90 ron</h3></div>
+    <div class="grid-item"><p>nuci, fulgi de ovăz, karob, caju, unt de cocos, fructe proaspete de pădure sau mere</p></div>
+    <div class="grid-item"><p>blat pufos cu cacao, mousse de mascarpone și inserție de fructe de pădure</p></div>
+    <div class="grid-item"><p>mousse de ciocolată albă belgiană cu blat pufos de migdale și insert acrișor din zmeură</p></div>
+    <div class="grid-item"><img src="./williams.jpg" @onclick="Williams" /></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"><h3>WILLIAMS  190 ron</h3></div>
+    <div class="grid-item"><p></p></div>
+    <div class="grid-item"><p></p></div>
+    <div class="grid-item"><p>mousse de ciocolată belgiană cu lapte, mousse de ciocolată albă cu vanilie bourbon, blat pufos de vanilie și pudră de migdale și insert de pere</p></div>
+
+
+</div>
+
+
+<style>
+    button{
+        margin: 0;
+        position: absolute;
+
+
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        gap: 15px 100px;
+    }
+    .add{
+        width:100%;
+        font-size:30px;
+        background-color:rgba(0,0,0,0);
+        color:white;
+        position:absolute;
+        left:0px;
+        bottom:-40px;
+        opacity:0;
+      
+    }
+    .grid-container:hover .add{
+        bottom:0px;
+        opacity:1;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    h3{
+        text-align:center;
+    }
+    h1{
+        text-align:center;
+    }
+    p{
+        text-align:center;
+    }
+
+
+</style>
+ 
+@code {
+
+
+
+    public void AfterEight()
+    {
+        var produs = APIService.Get<Produs>("AfterEight");
+        if (produs.Cantitate > 0)
+        {
+            String den = "AfterEight";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+
+
+    public void CarrotCake()
+    {
+        var produs = APIService.Get<Produs>("CarrotCake");
+        if (produs.Cantitate > 0)
+        {
+            String den = "CarrotCake";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+
+    }
+
+    public void ExoticLight()
+    {
+        var produs = APIService.Get<Produs>("ExoticLight");
+        if (produs.Cantitate > 0)
+        {
+            String den = "ExoticLight";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void Fistique()
+    {
+        var produs = APIService.Get<Produs>("Fistique");
+        if (produs.Cantitate > 0)
+        {
+            String den = "Fistiqoue";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+
+    public void MangoPassion()
+    {
+        var produs = APIService.Get<Produs>("MangoPassion");
+        if (produs.Cantitate > 0)
+        {
+            String den = "MangoPassion";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void Nuts()
+    {
+        var produs = APIService.Get<Produs>("Nuts");
+        if (produs.Cantitate > 0)
+        {
+            String den = "Nuts";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void Rawvegan()
+    {
+        var produs = APIService.Get<Produs>("RawVegan");
+        if (produs.Cantitate > 0)
+        {
+            String den = "RawVegan";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+
+    public void Sauvage()
+    {
+        var produs = APIService.Get<Produs>("Sauvage");
+        if (produs.Cantitate > 0)
+        {
+            String den = "Sauvage";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void WhiteFantasy()
+    {
+        var produs = APIService.Get<Produs>("WhiteFantasy");
+        if (produs.Cantitate > 0)
+        {
+            String den = "WhiteFantasy";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+    public void Williams()
+    {
+        var produs = APIService.Get<Produs>("Williams");
+        if (produs.Cantitate > 0)
+        {
+            String den = "Williams";
+            comanda.Add(den);
+            comanda.crestecomanda(produs.Pret);
+            produs.Cantitate -= 1;
+            APIService.Update<Produs>(produs);
+
+        }
+    }
+}

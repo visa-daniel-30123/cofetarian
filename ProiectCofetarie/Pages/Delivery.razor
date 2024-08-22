@@ -1,0 +1,220 @@
+﻿@page "/delivery"
+@using System.Text.RegularExpressions;
+@using ProiectCofetarie.Data
+@using ProiectCofetarie.Library;
+@using ProiectCofetarie.Library.Models;
+@inject APIService APIService
+@inject AppCofetarie AppCofetarie
+@inject ListaComenzi comanda
+@inject NavigationManager NavigationManager
+<p>@message</p>
+<div class="container">
+    <h2 class="title">Vizualizare comandă:</h2>
+    <select asp-for="SelectedString" class="form-control">
+        @foreach (var item in comanda) 
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+
+    <div class="delete-section">
+        <h3 class="subtitle">Pentru a sterge un element din comanda, introduceti numele, apoi apăsați butonul: </h3>
+        <div class="form-group">
+            <label for="prod">Nume:</label>
+            <InputText id="prod" name="prod" @bind-Value="prod"></InputText>
+        </div>
+        <button type="submit" class="delete-btn" @onclick="DeleteFromlist">Sterge</button>
+    </div>
+
+
+    <form>
+        <div class="form-group">
+            <label for="nume">Nume:</label>
+            <input type="text" id="nume" name="nume" @bind-value="numereal" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefon">Telefon:</label>
+            <input type="tel" id="telefon" name="telefon" @bind-value="telnumer" required>
+        </div>
+
+        <div class="form-group">
+            <label for="adresa">Adresa:</label>
+            <input type="adresa" id="adresa" name="adresa" @bind-value="adresa" required>
+        </div>
+
+        <div class="form-group">
+            <label for="observatii">Observații:</label>
+            <textarea id="observatii" name="observatii"></textarea>
+        </div>
+
+        <h3 class="subtitle">Pretul curent al comenzii este @comanda.getpretfinal()</h3>
+        <button type="submit" value="Trimite comanda" @onclick="trimiteComada">Trimite comanda</button>
+    
+    </form>
+</div>
+
+<style>
+    .container {
+        border: 2px solid #ccc;
+        width: 400px;
+        margin: 0;
+        margin-right: auto;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        font-family: "Arial", sans-serif;
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        font-family: "Arial", sans-serif;
+        margin-bottom: 15px;
+    }
+
+    .delete-section {
+        margin-bottom: 20px;
+    }
+
+    .delete-btn {
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 10px;
+        background-color: #ff3d2f;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        .delete-btn:hover {
+            opacity: 0.8;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    select,
+    textarea,
+    input[type="text"],
+    input[type="tel"],
+    input[type="adresa"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    button {
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 10px;
+        background-color: #0a770d;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+    p {
+        color: red;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+</style>
+
+@code {
+    public string adresa;
+    public string numereal;
+    public string message;
+    public String comandaCurenta;
+    public String prod;
+    public string telnumer { get; set; }
+
+    public void SariPeAltaPagina()
+    {
+        foreach (var s in comanda)
+        {
+            comandaCurenta += " " + s;
+        }
+    }
+
+    public void DeleteFromlist()
+    {
+        bool exista = false;
+        foreach (var s1 in comanda)
+        {
+            if (s1.Equals(prod))
+                exista = true;
+        }
+        if (exista)
+        {
+            var produs = APIService.Get<Produs>(prod);
+            comanda.crestecomanda(-produs.Pret);
+            produs.Cantitate++;
+            APIService.Update<Produs>(produs);
+            foreach (var s in comanda)
+            {
+                if (s == prod)
+                {
+                    comanda.Remove(s);
+                    comandaCurenta = "";
+                    break;
+                }
+            }
+        }
+
+
+    }
+
+    public void trimiteComada()
+    {
+            bool isValid = Regex.IsMatch(telnumer, @"^\d{10}$");
+            @if (@AppCofetarie.IsLoggedIn && isValid && adresa.Length!=0 && numereal.Length!=0 && comanda.Count>0)
+            {
+
+                APIService.Post<IstoricComenzi>(new IstoricComenzi { Emailclient = @AppCofetarie?.LoggedInUser?.Email, Data = DateTime.Today.ToString(), Comanda = string.Join(',', comanda) });
+                
+           
+                foreach (var s in comanda)
+            
+                {
+                
+                    var produs = APIService.Get<Produs>(s);
+                
+                    produs.Cantitate -= 1;
+                
+                    APIService.Update<Produs>(produs);
+            
+                }
+                 comanda.setpretfinal(0);
+               comanda.Clear();
+
+
+                message = "comanda a fost plasata cu succes";
+         
+            }
+            else
+            {
+                message = "trebuie sa va logati inainte de a plasa comanda";
+            }
+            NavigationManager.NavigateTo("/login");
+    }
+
+}

@@ -1,0 +1,73 @@
+﻿@inherits LayoutComponentBase
+@using ProiectCofetarie.Data
+@inject APIService APIService
+@inject AppCofetarie AppCofetarie
+@inject ListaComenzi ListaComenzi
+@using ProiectCofetarie.Library;
+@using ProiectCofetarie.Library.Models;
+
+<PageTitle>ProiectCofetarie</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+
+        <div class="top-row px-4">
+            @if (ListaComenzi.Count > 0)
+            {
+                <p><span id="itemCount">@ListaComenzi.Count</span> produse in cos - </p>
+            }
+            @if (@AppCofetarie.IsLoggedIn)
+            {
+                <p>@AppCofetarie?.LoggedInUser?.Name</p>
+                <a @onclick="OnLogOut" href="/">Logout</a>
+            }
+            else
+            {
+                <p>
+                    Trebuie sa va logati inainte de a plasa comanda. Comanda se face apasand pe imaginea fiecarui produs
+
+                </p>
+                <a href="/Login">Login</a>
+                <a href="/SingUp">Sign up</a>
+      
+            }
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<footer>
+    <p>&copy; Sweet Lovers</p>
+</footer>
+
+
+<style>
+    p {
+        text-align: right;
+        color:red;
+    }
+</style>
+@code {
+    int itemCount = 0;
+
+    void OnLogOut()
+    {
+        AppCofetarie.IsLoggedIn = false;
+        AppCofetarie.LoggedInUser = null;
+    }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        ListaComenzi.CollectionChanged += async (s, args) =>
+        {
+            await InvokeAsync(StateHasChanged);
+        };
+    }
+}

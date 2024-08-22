@@ -1,0 +1,214 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\An3sem2\\ProiectCofetarieBun\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|solutionrelative:proiectcofetarie\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A2F480F-B5F0-4F1E-82D9-2778390B29FB}|ProiectCofetarie.Library\\ProiectCofetarie.Library.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie.library\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A2F480F-B5F0-4F1E-82D9-2778390B29FB}|ProiectCofetarie.Library\\ProiectCofetarie.Library.csproj|solutionrelative:proiectcofetarie.library\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A2F480F-B5F0-4F1E-82D9-2778390B29FB}|ProiectCofetarie.Library\\ProiectCofetarie.Library.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie.library\\appcofetarie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A2F480F-B5F0-4F1E-82D9-2778390B29FB}|ProiectCofetarie.Library\\ProiectCofetarie.Library.csproj|solutionrelative:proiectcofetarie.library\\appcofetarie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FA985C-2758-470D-8FF6-463EDE4AD7A8}|ProiectCofetarie.WebAPI\\ProiectCofetarie.WebAPI.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie.webapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4FA985C-2758-470D-8FF6-463EDE4AD7A8}|ProiectCofetarie.WebAPI\\ProiectCofetarie.WebAPI.csproj|solutionrelative:proiectcofetarie.webapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie\\pages\\signup.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|solutionrelative:proiectcofetarie\\pages\\signup.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|solutionrelative:proiectcofetarie\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|solutionrelative:proiectcofetarie\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|solutionrelative:proiectcofetarie\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie\\pages\\fetchdata.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A947F4AC-B07A-46BA-84C1-9A0C03DDD8D9}|ProiectCofetarie\\ProiectCofetarie.csproj|solutionrelative:proiectcofetarie\\pages\\fetchdata.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FA985C-2758-470D-8FF6-463EDE4AD7A8}|ProiectCofetarie.WebAPI\\ProiectCofetarie.WebAPI.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie.webapi\\data\\proiectcofetariewebapicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4FA985C-2758-470D-8FF6-463EDE4AD7A8}|ProiectCofetarie.WebAPI\\ProiectCofetarie.WebAPI.csproj|solutionrelative:proiectcofetarie.webapi\\data\\proiectcofetariewebapicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FA985C-2758-470D-8FF6-463EDE4AD7A8}|ProiectCofetarie.WebAPI\\ProiectCofetarie.WebAPI.csproj|d:\\an3sem2\\proiectcofetariebun\\proiectcofetarie.webapi\\controllers\\produscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4FA985C-2758-470D-8FF6-463EDE4AD7A8}|ProiectCofetarie.WebAPI\\ProiectCofetarie.WebAPI.csproj|solutionrelative:proiectcofetarie.webapi\\controllers\\produscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProiectCofetarieWebAPIContext/True/SqlTable/dbo.IstoricComenzis.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProiectCofetarieWebAPIContext/True/SqlTable/dbo.Produs.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppCofetarie.cs",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.Library\\AppCofetarie.cs",
+              "RelativeDocumentMoniker": "ProiectCofetarie.Library\\AppCofetarie.cs",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.Library\\AppCofetarie.cs",
+              "RelativeToolTip": "ProiectCofetarie.Library\\AppCofetarie.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T10:29:49.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.razor",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "ProiectCofetarie\\Pages\\Login.razor",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Pages\\Login.razor",
+              "RelativeToolTip": "ProiectCofetarie\\Pages\\Login.razor",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T10:42:08.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "ProiectCofetarie\\Shared\\NavMenu.razor",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "ProiectCofetarie\\Shared\\NavMenu.razor",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T10:37:58.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Shared\\MainLayout.razor",
+              "RelativeDocumentMoniker": "ProiectCofetarie\\Shared\\MainLayout.razor",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Shared\\MainLayout.razor",
+              "RelativeToolTip": "ProiectCofetarie\\Shared\\MainLayout.razor",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T10:37:51.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SignUp.razor",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Pages\\SignUp.razor",
+              "RelativeDocumentMoniker": "ProiectCofetarie\\Pages\\SignUp.razor",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Pages\\SignUp.razor",
+              "RelativeToolTip": "ProiectCofetarie\\Pages\\SignUp.razor",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T10:34:38.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProiectCofetarieWebAPIContext.cs",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.WebAPI\\Data\\ProiectCofetarieWebAPIContext.cs",
+              "RelativeDocumentMoniker": "ProiectCofetarie.WebAPI\\Data\\ProiectCofetarieWebAPIContext.cs",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.WebAPI\\Data\\ProiectCofetarieWebAPIContext.cs",
+              "RelativeToolTip": "ProiectCofetarie.WebAPI\\Data\\ProiectCofetarieWebAPIContext.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T10:34:35.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FetchData.razor",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Pages\\FetchData.razor",
+              "RelativeDocumentMoniker": "ProiectCofetarie\\Pages\\FetchData.razor",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Pages\\FetchData.razor",
+              "RelativeToolTip": "ProiectCofetarie\\Pages\\FetchData.razor",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-05-22T18:04:14.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "dbo.Produs.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProiectCofetarieWebAPIContext/True/SqlTable/dbo.Produs.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProiectCofetarieWebAPIContext/True/SqlTable/dbo.Produs.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2023-05-23T12:01:54.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.razor",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "ProiectCofetarie\\Pages\\Index.razor",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie\\Pages\\Index.razor",
+              "RelativeToolTip": "ProiectCofetarie\\Pages\\Index.razor",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-05-22T19:31:16.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProdusController.cs",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.WebAPI\\Controllers\\ProdusController.cs",
+              "RelativeDocumentMoniker": "ProiectCofetarie.WebAPI\\Controllers\\ProdusController.cs",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.WebAPI\\Controllers\\ProdusController.cs",
+              "RelativeToolTip": "ProiectCofetarie.WebAPI\\Controllers\\ProdusController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-05-23T09:19:37.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "dbo.IstoricComenzis.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProiectCofetarieWebAPIContext/True/SqlTable/dbo.IstoricComenzis.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProiectCofetarieWebAPIContext/True/SqlTable/dbo.IstoricComenzis.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2023-05-22T14:45:07.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "APIService.cs",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.Library\\APIService.cs",
+              "RelativeDocumentMoniker": "ProiectCofetarie.Library\\APIService.cs",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.Library\\APIService.cs",
+              "RelativeToolTip": "ProiectCofetarie.Library\\APIService.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-05-22T21:20:15.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.WebAPI\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "ProiectCofetarie.WebAPI\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\An3sem2\\ProiectCofetarieBun\\ProiectCofetarie.WebAPI\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "ProiectCofetarie.WebAPI\\Controllers\\UsersController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-06T18:53:44.476Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

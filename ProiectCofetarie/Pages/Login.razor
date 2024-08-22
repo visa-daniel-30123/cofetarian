@@ -1,0 +1,138 @@
+﻿@page "/login"
+@inject APIService APIService
+@inject AppCofetarie AppCofetarie
+@using ProiectCofetarie.Library;
+@using ProiectCofetarie.Library.Models;
+@inject NavigationManager NavigationManager
+<PageTitle>Login Page</PageTitle>
+
+<style>
+    .container {
+        /* Existing styles */
+        width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Add this line to center-align the container */
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    label {
+        text-align: center;
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 16px;
+        color: #f00;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: none;
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    button {
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #ff69b4; /* Pink color */
+        color: #fff;
+        padding: 14px 20px;
+        margin-top: 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #ff478f; /* Darker pink color on hover */
+        }
+
+    <button style="background-color: #ff69b4; color: #fff;" @ onclick="OnLoginClick" > Login</button >
+
+    h5 {
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+    <h3>Login</h3>
+    <h4>@message</h4>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <InputText id="username" @bind-Value="username"></InputText>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <InputText id="password" @bind-Value="password"></InputText>
+    </div>
+    <button style="background-color: #ff69b4; color: #fff;" @onclick="OnLoginClick">Login</button>
+
+    @if (AppCofetarie.IsLoggedIn)
+    {
+        <h5>@username</h5>
+    }
+</div>
+
+@code {
+    private string? username { get; set; }
+    private string? password { get; set; }
+    private string message { get; set; }
+
+    public void OnLoginClick()
+    {
+
+        var user = APIService.Get<User>(username);
+        if (user != null)
+        {
+            if (user.Password == password)
+            { //login
+                message = "Te-ai logat";
+                AppCofetarie.LoggedInUser = user;
+                AppCofetarie.IsLoggedIn = true;
+                NavigationManager.NavigateTo("/fetchdata");
+            }
+            else
+            {
+                message = "Nu ai reusit sa te loghezi";
+            }
+        }
+        else
+        {
+            message = "Nu exista userul";
+        }
+    }
+}
